@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Eggs Delivery</string>
+    <string name="BTN_CONTINUE">Continue</string>
+    <string name="NAME">Name</string>
+    <string name="PHONE">Phone</string>
+    <string name="ADDRESS">Address</string>
+    <string name="HINT_NAME">Add Your Name/Nickname</string>
+    <string name="HINT_PHONE">Please Enter Your Phone</string>
+    <string name="HINT_ADDRESS">Add Your Delivery Address</string>
+</resources>
