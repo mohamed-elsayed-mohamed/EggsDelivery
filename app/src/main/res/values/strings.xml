@@ -7,4 +7,25 @@
     <string name="HINT_NAME">Add Your Name/Nickname</string>
     <string name="HINT_PHONE">Please Enter Your Phone</string>
     <string name="HINT_ADDRESS">Add Your Delivery Address</string>
+    <string name="LBL_TYPE1_Name">White Egg</string>
+    <string name="LBL_TYPE2_Name">Red Egg</string>
+    <string name="LBL_TYPE3_Name">Egyption Egg</string>
+    <string name="QUANTITY">Quantity</string>
+    <string name="PRICE">Price</string>
+    <string name="TOTAL_PRICE">Total Price</string>
+    <string name="NOTE">Note</string>
+    <string name="BTN_CANCEL">Cancel</string>
+    <string name="BTN_CONFIRM">Confirm</string>
+    <string name="BTN_OK">Ok</string>
+    <string name="HINT_ADD_NOTE">Please Add Your Note Here</string>
+    <string name="SAVE_NOTE">Note Saved</string>
+    <string name="CANCEL_OPERATION">Operation Canceled</string>
+    <string name="CONFIRM_OPERATION">Operation Sent to Seller</string>
+    <string name="LE">L.E</string>
+    <string name="TOTAL">Total: </string>
+    <string name="NA">N.A</string>
+
+    <string name="facebook_app_id">196046211902494</string>
+    <string name="fb_login_protocol_scheme">fb196046211902494</string>
+
 </resources>

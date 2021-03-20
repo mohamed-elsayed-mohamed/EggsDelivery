@@ -1,18 +1,498 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView  xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:fillViewport="true">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/primaryLightColor">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.gridlayout.widget.GridLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:scrollbars="vertical"
+            app:columnCount="1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:rowCount="3">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:clickable="false"
+                android:elevation="0dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                app:cardBackgroundColor="#ffffff"
+                app:cardCornerRadius="20dp"
+                app:contentPaddingBottom="10dp"
+                app:contentPaddingLeft="10dp"
+                app:contentPaddingRight="10dp"
+                app:contentPaddingTop="10dp"
+                app:layout_column="0"
+                app:layout_columnWeight="1"
+                app:layout_gravity="fill"
+                app:layout_row="0"
+                app:layout_rowWeight="1">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/imageEgg1"
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:scaleType="centerCrop"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/type1" />
+
+                    <TextView
+                        android:id="@+id/lblName1"
+                        android:layout_width="140dp"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginLeft="20dp"
+                        android:gravity="bottom|center_vertical"
+                        android:text="@string/LBL_TYPE1_Name"
+                        android:textColor="@color/black"
+                        android:textSize="22sp"
+                        app:layout_constraintStart_toEndOf="@+id/imageEgg1"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/lblPrice1"
+                        android:layout_width="85dp"
+                        android:layout_height="40dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/radius"
+                        android:gravity="center_horizontal|center_vertical"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        app:layout_constraintBottom_toBottomOf="@+id/lblName1"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/lblName1" />
+
+                    <View
+                        android:id="@+id/view"
+                        android:layout_width="0dp"
+                        android:layout_height="3dp"
+                        android:layout_marginTop="3dp"
+                        android:background="@drawable/separator"
+                        app:layout_constraintEnd_toEndOf="@+id/lblPrice1"
+                        app:layout_constraintStart_toStartOf="@+id/lblName1"
+                        app:layout_constraintTop_toBottomOf="@+id/lblName1" />
+
+                    <Button
+                        android:id="@+id/btnMinus1"
+                        android:layout_width="50dp"
+                        android:layout_height="40dp"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginRight="20dp"
+                        android:insetTop="0dp"
+                        android:insetBottom="0dp"
+                        android:text="-"
+                        android:textSize="24sp"
+                        app:backgroundTint="@android:color/holo_red_light"
+                        app:layout_constraintBottom_toBottomOf="@+id/txtQuantity1"
+                        app:layout_constraintEnd_toStartOf="@+id/txtQuantity1"
+                        app:layout_constraintTop_toTopOf="@+id/txtQuantity1" />
+
+                    <EditText
+                        android:id="@+id/txtQuantity1"
+                        android:layout_width="50dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/custom_input"
+                        android:ems="10"
+                        android:gravity="center_horizontal|center_vertical"
+                        android:inputType="numberSigned"
+                        android:maxLength="2"
+                        android:text="1"
+                        app:layout_constraintEnd_toEndOf="@+id/view"
+                        app:layout_constraintStart_toStartOf="@+id/view"
+                        app:layout_constraintTop_toBottomOf="@+id/view" />
+
+                    <Button
+                        android:id="@+id/btnPlus1"
+                        android:layout_width="50dp"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginLeft="20dp"
+                        android:insetTop="0dp"
+                        android:insetBottom="0dp"
+                        android:text="+"
+                        android:textSize="18sp"
+                        app:backgroundTint="@android:color/holo_green_light"
+                        app:layout_constraintBottom_toBottomOf="@+id/txtQuantity1"
+                        app:layout_constraintStart_toEndOf="@+id/txtQuantity1"
+                        app:layout_constraintTop_toTopOf="@+id/txtQuantity1" />
+
+                    <TextView
+                        android:id="@+id/lblTotalPrice1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:text="Total: 100"
+                        android:textSize="18sp"
+                        app:layout_constraintEnd_toEndOf="@+id/view"
+                        app:layout_constraintStart_toStartOf="@+id/view"
+                        app:layout_constraintTop_toBottomOf="@+id/txtQuantity1" />
+
+                    <Button
+                        android:id="@+id/btnNote1"
+                        android:layout_width="75dp"
+                        android:layout_height="55dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="20dp"
+                        android:text="Note"
+                        app:backgroundTint="@android:color/darker_gray"
+                        app:layout_constraintStart_toStartOf="@+id/view"
+                        app:layout_constraintTop_toBottomOf="@+id/lblTotalPrice1" />
+
+                    <Button
+                        android:id="@+id/btnDone1"
+                        android:layout_width="0dp"
+                        android:layout_height="55dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginRight="10dp"
+                        android:text="Done"
+                        app:backgroundTint="@android:color/holo_green_dark"
+                        app:layout_constraintBottom_toBottomOf="@+id/btnNote1"
+                        app:layout_constraintEnd_toEndOf="@+id/view"
+                        app:layout_constraintStart_toStartOf="@+id/txtQuantity1"
+                        app:layout_constraintTop_toTopOf="@+id/btnNote1" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:clickable="false"
+                android:elevation="0dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                app:cardCornerRadius="20dp"
+                app:contentPaddingBottom="10dp"
+                app:contentPaddingLeft="10dp"
+                app:contentPaddingRight="10dp"
+                app:contentPaddingTop="10dp"
+                app:layout_column="0"
+                app:layout_columnWeight="1"
+                app:layout_gravity="fill"
+                app:layout_row="1"
+                app:layout_rowWeight="1">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/imageEgg2"
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginLeft="10dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/type2" />
+
+                    <TextView
+                        android:id="@+id/lblName2"
+                        android:layout_width="140dp"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginLeft="20dp"
+                        android:gravity="bottom"
+                        android:text="@string/LBL_TYPE2_Name"
+                        android:textColor="@color/black"
+                        android:textSize="22sp"
+                        app:layout_constraintStart_toEndOf="@+id/imageEgg2"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/lblPrice2"
+                        android:layout_width="85dp"
+                        android:layout_height="40dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/radius"
+                        android:gravity="center_horizontal|center_vertical"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        app:layout_constraintBottom_toBottomOf="@+id/lblName2"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/lblName2" />
+
+                    <View
+                        android:id="@+id/view2"
+                        android:layout_width="0dp"
+                        android:layout_height="3dp"
+                        android:layout_marginTop="3dp"
+                        android:background="@drawable/separator"
+                        app:layout_constraintEnd_toEndOf="@+id/lblPrice2"
+                        app:layout_constraintStart_toStartOf="@+id/lblName2"
+                        app:layout_constraintTop_toBottomOf="@+id/lblName2" />
+
+                    <Button
+                        android:id="@+id/btnMinus2"
+                        android:layout_width="50dp"
+                        android:layout_height="40dp"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginRight="20dp"
+                        android:insetTop="0dp"
+                        android:insetBottom="0dp"
+                        android:text="-"
+                        android:textSize="24sp"
+                        app:backgroundTint="@android:color/holo_red_light"
+                        app:layout_constraintBottom_toBottomOf="@+id/txtQuantity2"
+                        app:layout_constraintEnd_toStartOf="@+id/txtQuantity2"
+                        app:layout_constraintTop_toTopOf="@+id/txtQuantity2" />
+
+                    <EditText
+                        android:id="@+id/txtQuantity2"
+                        android:layout_width="50dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/custom_input"
+                        android:ems="10"
+                        android:gravity="center_horizontal|center_vertical"
+                        android:inputType="numberSigned"
+                        android:maxLength="2"
+                        android:text="1"
+                        app:layout_constraintEnd_toEndOf="@+id/view2"
+                        app:layout_constraintStart_toStartOf="@+id/view2"
+                        app:layout_constraintTop_toBottomOf="@+id/view2" />
+
+                    <Button
+                        android:id="@+id/btnPlus2"
+                        android:layout_width="50dp"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginLeft="20dp"
+                        android:insetTop="0dp"
+                        android:insetBottom="0dp"
+                        android:text="+"
+                        android:textSize="18sp"
+                        app:backgroundTint="@android:color/holo_green_light"
+                        app:layout_constraintBottom_toBottomOf="@+id/txtQuantity2"
+                        app:layout_constraintStart_toEndOf="@+id/txtQuantity2"
+                        app:layout_constraintTop_toTopOf="@+id/txtQuantity2" />
+
+                    <TextView
+                        android:id="@+id/lblTotalPrice2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:text="Total: 100"
+                        android:textSize="18sp"
+                        app:layout_constraintEnd_toEndOf="@+id/view2"
+                        app:layout_constraintStart_toStartOf="@+id/view2"
+                        app:layout_constraintTop_toBottomOf="@+id/txtQuantity2" />
+
+                    <Button
+                        android:id="@+id/btnNote2"
+                        android:layout_width="75dp"
+                        android:layout_height="55dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="20dp"
+                        android:text="Note"
+                        app:backgroundTint="@android:color/darker_gray"
+                        app:layout_constraintStart_toStartOf="@+id/view2"
+                        app:layout_constraintTop_toBottomOf="@+id/lblTotalPrice2" />
+
+                    <Button
+                        android:id="@+id/btnDone2"
+                        android:layout_width="0dp"
+                        android:layout_height="55dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginRight="10dp"
+                        android:text="Done"
+                        app:backgroundTint="@android:color/holo_green_dark"
+                        app:layout_constraintBottom_toBottomOf="@+id/btnNote2"
+                        app:layout_constraintEnd_toEndOf="@+id/view2"
+                        app:layout_constraintStart_toEndOf="@+id/btnNote2"
+                        app:layout_constraintTop_toTopOf="@+id/btnNote2" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:clickable="false"
+                android:elevation="0dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                app:cardCornerRadius="20dp"
+                app:contentPaddingBottom="10dp"
+                app:contentPaddingLeft="10dp"
+                app:contentPaddingRight="10dp"
+                app:contentPaddingTop="10dp"
+                app:layout_column="0"
+                app:layout_columnWeight="1"
+                app:layout_gravity="fill"
+                app:layout_row="2"
+                app:layout_rowWeight="1">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/imageEgg3"
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:scaleType="centerCrop"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/type3" />
+
+                    <TextView
+                        android:id="@+id/lblName3"
+                        android:layout_width="140dp"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginLeft="20dp"
+                        android:gravity="bottom"
+                        android:text="@string/LBL_TYPE3_Name"
+                        android:textColor="@color/black"
+                        android:textSize="22sp"
+                        app:layout_constraintStart_toEndOf="@+id/imageEgg3"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/lblPrice3"
+                        android:layout_width="85dp"
+                        android:layout_height="40dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/radius"
+                        android:gravity="center_horizontal|center_vertical"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        app:layout_constraintBottom_toBottomOf="@+id/lblName3"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/lblName3" />
+
+                    <View
+                        android:id="@+id/view3"
+                        android:layout_width="0dp"
+                        android:layout_height="3dp"
+                        android:layout_marginTop="3dp"
+                        android:background="@drawable/separator"
+                        app:layout_constraintEnd_toEndOf="@+id/lblPrice3"
+                        app:layout_constraintStart_toStartOf="@+id/lblName3"
+                        app:layout_constraintTop_toBottomOf="@+id/lblName3" />
+
+                    <Button
+                        android:id="@+id/btnMinus3"
+                        android:layout_width="50dp"
+                        android:layout_height="40dp"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginRight="20dp"
+                        android:insetTop="0dp"
+                        android:insetBottom="0dp"
+                        android:text="-"
+                        android:textSize="24sp"
+                        app:backgroundTint="@android:color/holo_red_light"
+                        app:layout_constraintBottom_toBottomOf="@+id/txtQuantity3"
+                        app:layout_constraintEnd_toStartOf="@+id/txtQuantity3"
+                        app:layout_constraintTop_toTopOf="@+id/txtQuantity3" />
+
+                    <EditText
+                        android:id="@+id/txtQuantity3"
+                        android:layout_width="50dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/custom_input"
+                        android:ems="10"
+                        android:gravity="center_horizontal|center_vertical"
+                        android:inputType="numberSigned"
+                        android:maxLength="2"
+                        android:text="1"
+                        app:layout_constraintEnd_toEndOf="@+id/view3"
+                        app:layout_constraintStart_toStartOf="@+id/view3"
+                        app:layout_constraintTop_toBottomOf="@+id/view3" />
+
+                    <Button
+                        android:id="@+id/btnPlus3"
+                        android:layout_width="50dp"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginLeft="20dp"
+                        android:insetTop="0dp"
+                        android:insetBottom="0dp"
+                        android:text="+"
+                        android:textSize="18sp"
+                        app:backgroundTint="@android:color/holo_green_light"
+                        app:layout_constraintBottom_toBottomOf="@+id/txtQuantity3"
+                        app:layout_constraintStart_toEndOf="@+id/txtQuantity3"
+                        app:layout_constraintTop_toTopOf="@+id/txtQuantity3" />
+
+                    <TextView
+                        android:id="@+id/lblTotalPrice3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:text="Total: 100"
+                        android:textSize="18sp"
+                        app:layout_constraintEnd_toEndOf="@+id/view3"
+                        app:layout_constraintStart_toStartOf="@+id/view3"
+                        app:layout_constraintTop_toBottomOf="@+id/txtQuantity3" />
+
+                    <Button
+                        android:id="@+id/btnNote3"
+                        android:layout_width="75dp"
+                        android:layout_height="55dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="20dp"
+                        android:text="Note"
+                        app:backgroundTint="@android:color/darker_gray"
+                        app:layout_constraintStart_toStartOf="@+id/view3"
+                        app:layout_constraintTop_toBottomOf="@+id/lblTotalPrice3" />
+
+                    <Button
+                        android:id="@+id/btnDone3"
+                        android:layout_width="0dp"
+                        android:layout_height="55dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginRight="10dp"
+                        android:text="Done"
+                        app:backgroundTint="@android:color/holo_green_dark"
+                        app:layout_constraintBottom_toBottomOf="@+id/btnNote3"
+                        app:layout_constraintEnd_toEndOf="@+id/view3"
+                        app:layout_constraintStart_toEndOf="@+id/btnNote3"
+                        app:layout_constraintTop_toTopOf="@+id/btnNote3" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+        </androidx.gridlayout.widget.GridLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
