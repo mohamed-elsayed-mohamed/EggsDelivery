@@ -42,19 +42,10 @@ public class UserInfoActivity extends AppCompatActivity {
                 if (snapshot.hasChild(userID)){
                     DataSnapshot userData = snapshot.child(userID);
                     User user = userData.getValue(User.class);
-                    isComplete = true;
                     txtName.setText(user.getName());
                     txtPhone.setText(user.getPhone());
                     txtAddress.setText(user.getAddress());
                 }
-                /*
-                for(DataSnapshot dataSnapshot :snapshot.getChildren())
-                    if(dataSnapshot.getKey().equals(userID)) {
-                        user = dataSnapshot.getValue(User.class);
-                        holder.userName.setText(user.name);
-                        break;
-                    }
-                */
             }
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
