@@ -25,7 +25,19 @@
     <string name="TOTAL">Total: </string>
     <string name="NA">N.A</string>
 
+    <string name="NAME_ERROR">Please enter your name!</string>
+    <string name="PHONE_ERROR">Please enter your phone number!</string>
+    <string name="PHONE_NUM_COUNT_ERROR">Please enter your phone it has 11 digits!</string>
+    <string name="ADDRESS_ERROR">Please enter your address!</string>
+
     <string name="facebook_app_id">196046211902494</string>
     <string name="fb_login_protocol_scheme">fb196046211902494</string>
-
+    <string name="LANGUAGE">عربي</string>
+    <string name="LOGOUT">Logout</string>
+    <string name="LOGOUT_MESSAGE">Are you sure you want to logout</string>
+    <string name="YES">Yes</string>
+    <string name="NO">No</string>
+    <string name="DONE">Done</string>
+    <string name="GOOGLE">Continue with Google</string>
+    <string name="SPLASH_STMT">Fresh eggs to your home :)</string>
 </resources>

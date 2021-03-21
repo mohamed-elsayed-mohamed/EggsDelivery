@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">Eggs Delivery</string>
+    <string name="BTN_CONTINUE">إستمرار</string>
+    <string name="NAME">الإسم</string>
+    <string name="PHONE">الهاتف</string>
+    <string name="ADDRESS">العنوان</string>
+    <string name="HINT_NAME">اضف إسمك/إسم الشهره</string>
+    <string name="HINT_PHONE">من فضلك أضف رقم الهاتف</string>
+    <string name="HINT_ADDRESS">أضف عنوان وصول طلبك</string>
+    <string name="LBL_TYPE1_Name">بيض أبيض</string>
+    <string name="LBL_TYPE2_Name">بيض أحمر</string>
+    <string name="LBL_TYPE3_Name">بيض بلدى</string>
+    <string name="QUANTITY">الكمية</string>
+    <string name="PRICE">السعر</string>
+    <string name="TOTAL_PRICE">الإجمالى</string>
+    <string name="NOTE">ملحوظة</string>
+    <string name="BTN_CANCEL">إلغاء</string>
+    <string name="BTN_CONFIRM">تأكيد الطلب</string>
+    <string name="BTN_OK">تــم</string>
+    <string name="HINT_ADD_NOTE">من فضلك أضف ملحوظتك هنا!</string>
+    <string name="SAVE_NOTE">تم حفظ ملحوظتك بنجاح</string>
+    <string name="CANCEL_OPERATION">تم إلغاء العمليه</string>
+    <string name="CONFIRM_OPERATION">تم إرسال طلبك لصاحب المحل</string>
+    <string name="LE">ج.م</string>
+    <string name="TOTAL">الإجمالي: </string>
+    <string name="NA">لا يوجد</string>
+
+    <string name="NAME_ERROR">من فضلك ادخل إسمك</string>
+    <string name="PHONE_ERROR">من فضلك ادخل رقم الهاتف</string>
+    <string name="PHONE_NUM_COUNT_ERROR">من فضلك ادخل رقم الهاتق المكون من ١١ رقم</string>
+    <string name="ADDRESS_ERROR">من فضلك ادخل عنوان توصيل طلبك</string>
+
+    <string name="facebook_app_id">196046211902494</string>
+    <string name="fb_login_protocol_scheme">fb196046211902494</string>
+    <string name="LANGUAGE">English</string>
+    <string name="LOGOUT">تسجيل الخروج</string>
+    <string name="LOGOUT_MESSAGE">هل تريد تسجل الخروج؟</string>
+    <string name="YES">نعم</string>
+    <string name="NO">لا</string>
+    <string name="DONE">تــــــم</string>
+    <string name="GOOGLE">متابعة بحساب جوجل</string>
+    <string name="SPLASH_STMT">بيض طازج لحد باب بيتك :)</string>
+</resources>
