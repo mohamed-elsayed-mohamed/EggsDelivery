@@ -9,7 +9,7 @@
     <string name="HINT_ADDRESS">Add Your Delivery Address</string>
     <string name="LBL_TYPE1_Name">White Egg</string>
     <string name="LBL_TYPE2_Name">Red Egg</string>
-    <string name="LBL_TYPE3_Name">Egyption Egg</string>
+    <string name="LBL_TYPE3_Name">Local Egg</string>
     <string name="QUANTITY">Quantity</string>
     <string name="PRICE">Price</string>
     <string name="TOTAL_PRICE">Total Price</string>
@@ -24,6 +24,7 @@
     <string name="LE">L.E</string>
     <string name="TOTAL">Total: </string>
     <string name="NA">N.A</string>
+    <string name="EDIT">Edit</string>
 
     <string name="NAME_ERROR">Please enter your name!</string>
     <string name="PHONE_ERROR">Please enter your phone number!</string>

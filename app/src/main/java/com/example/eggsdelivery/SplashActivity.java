@@ -5,10 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
-import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.Handler;
-import android.util.DisplayMetrics;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -18,8 +16,8 @@ import java.util.Locale;
 
 public class SplashActivity extends AppCompatActivity {
 
-    public static final String LANG = "LANGUAGE";
-    public static final String LANG_VALUE = "VALUE";
+    public static final String EGGS_DELIVERY_PREF = "SHARED";
+    public static final String LANG_VALUE = "LANGUAGE";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +30,7 @@ public class SplashActivity extends AppCompatActivity {
             currentUser.reload();
         }
 
-        SharedPreferences sharedPreferences = getSharedPreferences(LANG, MODE_PRIVATE);
+        SharedPreferences sharedPreferences = getSharedPreferences(EGGS_DELIVERY_PREF, MODE_PRIVATE);
 
         String lang = sharedPreferences.getString(LANG_VALUE, "ar");
         setLocale(lang);

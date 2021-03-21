@@ -43,7 +43,6 @@ import java.util.Arrays;
 
 public class LoginActivity extends AppCompatActivity {
 
-    private String locale = "ar";
     private FirebaseAuth firebaseAuth;
 
     private LoginButton btnFacebook;
@@ -61,7 +60,8 @@ public class LoginActivity extends AppCompatActivity {
         btnGoogle = findViewById(R.id.btnGoogle);
 
         firebaseAuth = FirebaseAuth.getInstance();
-        if(locale.equals("ar")) {
+        String lang = getSharedPreferences(SplashActivity.EGGS_DELIVERY_PREF, MODE_PRIVATE).getString(SplashActivity.LANG_VALUE, "ar");
+        if(lang.equals("ar")) {
             setGooglePlusButtonText(btnGoogle, "         " + getString(R.string.GOOGLE));
         }else{
             setGooglePlusButtonText(btnGoogle, getString(R.string.GOOGLE) + "                 ");
@@ -112,9 +112,7 @@ public class LoginActivity extends AppCompatActivity {
                             if (snapshot.hasChild(userID)) {
                                 startActivity(new Intent(getApplicationContext(), MainActivity.class));
                             } else {
-                                Intent intent = new Intent(getApplicationContext(), UserInfoActivity.class);
-                                intent.putExtra("userID", userID);
-                                startActivity(intent);
+                                startActivity(new Intent(getApplicationContext(), UserInfoActivity.class));
                             }
                         }
 

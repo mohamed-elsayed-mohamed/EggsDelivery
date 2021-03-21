@@ -7,6 +7,10 @@
         android:icon="@drawable/ic_baseline_language_24"
         android:title="@string/LANGUAGE" />
     <item
+        android:id="@+id/itemEdit"
+        android:icon="@drawable/ic_baseline_edit_24"
+        android:title="@string/EDIT" />
+    <item
         android:id="@+id/itemLogout"
         android:icon="@drawable/ic_baseline_login_24"
         android:title="@string/LOGOUT" />

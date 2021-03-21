@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.facebook.login.LoginManager;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -32,8 +33,34 @@ public class UserInfoActivity extends AppCompatActivity {
         txtPhone = findViewById(R.id.txtPhone);
         txtAddress = findViewById(R.id.txtAddress);
 
-        userID = getIntent().getStringExtra("userID");
+        userID = FirebaseAuth.getInstance().getCurrentUser().getUid();
         databaseReference = FirebaseDatabase.getInstance().getReference();
+
+        FirebaseDatabase.getInstance().getReference("users").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.hasChild(userID)){
+                    DataSnapshot userData = snapshot.child(userID);
+                    User user = userData.getValue(User.class);
+                    isComplete = true;
+                    txtName.setText(user.getName());
+                    txtPhone.setText(user.getPhone());
+                    txtAddress.setText(user.getAddress());
+                }
+                /*
+                for(DataSnapshot dataSnapshot :snapshot.getChildren())
+                    if(dataSnapshot.getKey().equals(userID)) {
+                        user = dataSnapshot.getValue(User.class);
+                        holder.userName.setText(user.name);
+                        break;
+                    }
+                */
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
 
         findViewById(R.id.btnContinue).setOnClickListener(v->{
             if(!txtName.getText().toString().trim().equals("")) {
@@ -62,7 +89,9 @@ public class UserInfoActivity extends AppCompatActivity {
     @Override
     protected void onStop() {
         super.onStop();
-        if(isComplete == false)
+        if(isComplete == false) {
             FirebaseAuth.getInstance().signOut();
+            LoginManager.getInstance().logOut();
+        }
     }
 }

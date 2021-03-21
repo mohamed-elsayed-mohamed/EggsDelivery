@@ -24,6 +24,7 @@
     <string name="LE">ج.م</string>
     <string name="TOTAL">الإجمالي: </string>
     <string name="NA">لا يوجد</string>
+    <string name="EDIT">تعديل</string>
 
     <string name="NAME_ERROR">من فضلك ادخل إسمك</string>
     <string name="PHONE_ERROR">من فضلك ادخل رقم الهاتف</string>

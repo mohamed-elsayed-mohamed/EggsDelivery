@@ -5,23 +5,18 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.view.menu.MenuBuilder;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
-import android.content.res.Resources;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.DisplayMetrics;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.Window;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -35,7 +30,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import java.lang.reflect.Method;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
@@ -299,6 +295,7 @@ public class MainActivity extends AppCompatActivity {
                 userOrder.type = 1;
                 userOrder.note = note1;
                 userOrder.quantity = Integer.parseInt(txtQuantity1.getText().toString());
+                userOrder.date = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date());
                 addOrderOnFirebase(userOrder);
                 reset(userOrder.type);
                 confirmDialog.dismiss();
@@ -330,6 +327,7 @@ public class MainActivity extends AppCompatActivity {
                 userOrder.type = 2;
                 userOrder.note = note2;
                 userOrder.quantity = Integer.parseInt(txtQuantity2.getText().toString());
+                userOrder.date = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date());
                 addOrderOnFirebase(userOrder);
                 reset(userOrder.type);
 
@@ -362,6 +360,7 @@ public class MainActivity extends AppCompatActivity {
                 userOrder.type = 3;
                 userOrder.note = note3;
                 userOrder.quantity = Integer.parseInt(txtQuantity3.getText().toString());
+                userOrder.date = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date());
                 addOrderOnFirebase(userOrder);
                 reset(userOrder.type);
 
@@ -404,7 +403,7 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
             case R.id.itemLanguage:{
-                SharedPreferences sharedPreferences = getSharedPreferences(SplashActivity.LANG, MODE_PRIVATE);
+                SharedPreferences sharedPreferences = getSharedPreferences(SplashActivity.EGGS_DELIVERY_PREF, MODE_PRIVATE);
                 SharedPreferences.Editor editor = sharedPreferences.edit();
 
                 if(item.getTitle().equals("English")) {
@@ -416,6 +415,10 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 editor.commit();
+            }break;
+            case R.id.itemEdit:{
+                startActivity(new Intent(getApplicationContext(), UserInfoActivity.class));
+                finish();
             }break;
             case R.id.itemLogout:{
                 AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -452,16 +455,6 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return true;
-    }
-
-    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR1)
-    public static void setLocale(Activity activity, String languageCode) {
-        Locale locale = new Locale(languageCode);
-        Locale.setDefault(locale);
-        Resources resources = activity.getResources();
-        Configuration config = resources.getConfiguration();
-        config.setLocale(locale);
-        resources.updateConfiguration(config, resources.getDisplayMetrics());
     }
 
     public void setLocale(String lang) {
